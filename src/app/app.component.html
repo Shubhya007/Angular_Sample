@@ -1,5 +1,40 @@
-<div class="jumbotron" >
+<div class="jumbotron">
   <h2 class="text-center">Hello Shubham Shinde</h2>
   <hr>
   <button class="btn btn-primary ">Hello World</button>
+  <hr>
+  <label>{{ title }}</label>
 </div>
+<hr>
+  <div class="card">
+    <div class="card-header">
+      Property-Binding
+    </div>
+    <div class="card-body">
+      <label>City</label>
+      <input type="text" [value]="city" class="form-control"> 
+    </div>
+  </div>
+
+  <hr>
+  <div class="card">
+    <div class="card-header">
+     Event-Binding
+    </div>
+    <div class="card-body">
+      <span>Current Time</span>
+      <input type="text" [value]="time" class="form-control" readonly> 
+      <hr>
+      <button class="btn btn-primary" (click)="updateTime()"> Update Time</button>
+    </div>
+  </div>
+  <hr>
+  <div class="card text-white bg-dark" >
+    <div class="card-header">
+      Two way Binding
+    </div>
+    <div class="card-body">
+      <label>Enter you Name : {{name}}</label>
+      <input type="text" [(ngModel)]="name" class="form-control"> 
+    </div>
+  </div>
