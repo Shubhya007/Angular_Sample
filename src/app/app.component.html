@@ -13,10 +13,9 @@
   </div>
   <div class="card-body">
     <div><label>Enter you Name :</label>
-    <span [ngStyle]="{'font-style': fontStyle,'font-weight':fontWeight,'font-size':fontSize}"> {{name}}</span></div>
+      <span [ngStyle]="{'font-style': fontStyle,'font-weight':fontWeight,'font-size':fontSize}"> {{name}}</span></div>
     <input type="text" [(ngModel)]="name" class="form-control">
     <hr>
-
     <div class="container-fluid">
       <div class="row">
         <div class="input-group col-sm">
@@ -42,6 +41,21 @@
             </div>
           </div>
           <input type="text" class="form-control" (change)="updateSize($event)">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row row-cols-1 row-cols-md-3">
+    <div class="col mb-4" *ngFor="let emp of employee">
+      <div class="card text-white bg-info mb-3 mt-3 mr-3 col-sm " >
+        <div class="card-header">{{emp.id}}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{emp.name}}</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
         </div>
       </div>
     </div>
