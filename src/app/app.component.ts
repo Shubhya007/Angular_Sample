@@ -6,19 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title:string;
-  city:string;
-  time:string;
-  name:string;
+  title: string;
+  city: string;
+  name: string;
+  fontWeight: string;
+  fontStyle: string;
+  fontSize: string;
 
-  constructor(){
-      this.title = 'Shubham Shinde'
-      this.city = 'Mumbai'
-      this.time = new Date().toLocaleTimeString();
-      this.name = '';
+  constructor() {
+    this.title = 'Shubham Shinde'
+    this.city = 'Mumbai'
+    this.name = '';
+    this.fontWeight = "normal";
+    this.fontStyle = "normal";
+    this.fontSize = "20px";
   }
-
-  updateTime():void{
-      this.time= new Date().toLocaleTimeString();
+  updateSize(e):void{
+    var element = e.target;
+    var size = element.value+'px';
+    this.fontSize = size;
   }
 }

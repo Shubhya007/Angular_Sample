@@ -6,35 +6,44 @@
   <label>{{ title }}</label>
 </div>
 <hr>
-  <div class="card">
-    <div class="card-header">
-      Property-Binding
-    </div>
-    <div class="card-body">
-      <label>City</label>
-      <input type="text" [value]="city" class="form-control"> 
-    </div>
-  </div>
 
-  <hr>
-  <div class="card">
-    <div class="card-header">
-     Event-Binding
-    </div>
-    <div class="card-body">
-      <span>Current Time</span>
-      <input type="text" [value]="time" class="form-control" readonly> 
-      <hr>
-      <button class="btn btn-primary" (click)="updateTime()"> Update Time</button>
+<div class="card text-white bg-dark">
+  <div class="card-header">
+    Two way Binding
+  </div>
+  <div class="card-body">
+    <div><label>Enter you Name :</label>
+    <span [ngStyle]="{'font-style': fontStyle,'font-weight':fontWeight,'font-size':fontSize}"> {{name}}</span></div>
+    <input type="text" [(ngModel)]="name" class="form-control">
+    <hr>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="input-group col-sm">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="checkbox" (change)="fontWeight=fontWeight=='normal'?'bold':'normal'">
+            </div>
+          </div>
+          <span class="form-control">Bold </span>
+        </div>
+        <div class="input-group col-sm">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <input type="checkbox" (change)="fontStyle=fontStyle=='normal'?'italic':'normal'">
+            </div>
+          </div>
+          <span class="form-control">Italic </span>
+        </div>
+        <div class="input-group col-sm">
+          <div class="input-group-prepend">
+            <div class="input-group-text">
+              <span>Size(px) </span>
+            </div>
+          </div>
+          <input type="text" class="form-control" (change)="updateSize($event)">
+        </div>
+      </div>
     </div>
   </div>
-  <hr>
-  <div class="card text-white bg-dark" >
-    <div class="card-header">
-      Two way Binding
-    </div>
-    <div class="card-body">
-      <label>Enter you Name : {{name}}</label>
-      <input type="text" [(ngModel)]="name" class="form-control"> 
-    </div>
-  </div>
+</div>
