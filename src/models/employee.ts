@@ -1,4 +1,6 @@
 export class Employee{
 id:number;
-name:string
+emp_id:string;
+emp_name:string;
+dept:string
 }
