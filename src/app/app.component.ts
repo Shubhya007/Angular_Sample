@@ -27,12 +27,11 @@ export class AppComponent {
     this.fontWeight = "normal";
     this.fontStyle = "normal";
     this.fontSize = "20px";
-    console.log(this.calcObj.add(5,5));
+    //console.log(this.calcObj.add(5,5));
     this.employee = [];
     this.getAllEmp().subscribe((employeeList:Employee[])=>{
       this.employee = employeeList
       console.log(employeeList);
-
     })
   }
   updateSize(e): void {
@@ -42,7 +41,7 @@ export class AppComponent {
   }
 
   getAllEmp():Observable<Employee[]>{
-    return this.httpClient.get<Employee[]>("http://localhost:57622/api/Emp_Test")
+    return this.httpClient.get<Employee[]>("http://api.micchecking.me/api/Emp_Test")
   }
    
 }
